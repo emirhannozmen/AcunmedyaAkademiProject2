@@ -22,7 +22,6 @@
                                     <th scope="col">Gönderen</th>
                                     <th scope="col">E-posta 📧</th>
                                     <th scope="col">Konu</th>
-                                    <th scope="col">Tarih</th>
                                     <th scope="col">Okunma Bilgisi</th>
                                     <th scope="col">Detay</th>
                                     <th scope="col">Sil</th>
@@ -37,7 +36,6 @@
                                         <td>@item.NameSurname</td>
                                         <td>@item.Email</td>
                                         <td>@item.Subject</td>
-                                        <td>@item.SendDate.ToString("d-MM-yyyy")</td>
                                         @if (item.IsRead == true)
                                         {
                                             <td><a href="/AdminMessage/ReadToFalse/@item.MessageId" class="btn btn-outline-danger">Okunmadı Olarak İşaretle</a></td>
