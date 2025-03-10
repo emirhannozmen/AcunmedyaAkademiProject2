@@ -1,0 +1,62 @@
+﻿@model AcunmedyaAkademiProject2.Entities.Contact
+
+<div class="contact_section layout_padding">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="contact_main">
+                    <br />
+                    <br />
+                    <h1 class="contact_taital">Bize Yazın</h1>
+
+                    @using (Html.BeginForm("Index", "Default", FormMethod.Post))
+                    {
+                        <div class="form-group">
+                            @Html.TextBoxFor(m => m.Name, new { @class = "email-bt", @placeholder = "İSİM", @required = "required" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "email-bt", @type = "email", @placeholder = "E-Posta", @required = "required" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "email-bt", @placeholder = "Telefon Numaranız", @required = "required" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.TextAreaFor(m => m.Message, new { @class = "massage-bt", @placeholder = "Mesajınız", @rows = "5", @id = "comment", @required = "required" })
+                        </div>
+
+                        <button type="submit" class="main_bt">GÖNDER</button>
+                        <style>
+                            .main_bt {
+                                width: 100%;
+                                float: left;
+                                color: #fefefd;
+                                font-size: 17px;
+                                padding: 10px 0px;
+                                background-color: #fc95c4;
+                                text-transform: uppercase;
+                                font-weight: bold;
+                                text-align: center;
+                                border: none;
+                                border-radius: 5px;
+                                cursor: pointer;
+                                transition: background-color 0.3s ease;
+                            }
+
+                                .main_bt:hover {
+                                    background-color: #f48fb1;
+                                }
+
+                                .main_bt:active {
+                                    background-color: #f06292;
+                                }
+                        </style>
+
+                    }
+
+                </div>
+            </div>
+            

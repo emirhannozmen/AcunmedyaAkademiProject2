@@ -1,0 +1,118 @@
+﻿@model AcunmedyaAkademiProject2.Entities.Admin
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+            .profile img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                margin-right: 20px;
+            }
+
+            .profile h3 {
+                margin: 0;
+                font-size: 24px;
+                color: #333;
+            }
+
+            .profile p {
+                color: #777;
+                font-size: 14px;
+            }
+
+        #chart_div {
+            width: 100%;
+            height: 400px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    </style>
+
+    <script>
+        google.charts.load('current', { packages: ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            $.ajax({
+                url: '/AdminDashboard/GetChart',
+                dataType: 'json',
+                success: function (data) {
+                    var dataTable = google.visualization.arrayToDataTable(data);
+                    var options = {
+                        title: 'Kategoriye Göre Ürün Dağılımı',
+                        pieHole: 0.4,
+                        chartArea: { width: '80%', height: '80%' }
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                    chart.draw(dataTable, options);
+                },
+            });
+        }
+    </script>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Yönetim Paneli</h1>
+        </div>
+
+        <div class="profile">
+            <img src="~/Images/ProjectImage/AdminImage/user.png" alt="Profil Resmi">
+            <div>
+                <br />
+                <h3>@Model.Username</h3>
+                <p>Hoş geldiniz! Yönetim panelinizde işlem yapmaya başlayabilirsiniz.</p>
+            </div>
+        </div>
+
+        <div id="chart_div"></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿@model List<AcunmedyaAkademiProject2.Entities.Message>
+
+<div class="header-left">
+    <button class="search-trigger"><i class="fa fa-search"></i></button>
+    <div class="form-inline">
+        <form class="search-form">
+            <input class="form-control mr-sm-2" type="text" placeholder="Ara ..." aria-label="Search">
+            <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+        </form>
+    </div>
+
+    <div class="dropdown for-notification">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-bell"></i>
+            <span class="count bg-danger">0</span>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="notification">
+            <p class="red">Bildiriminiz Yok</p>
+            <a class="dropdown-item media" href="#">
+            </a>
+        </div>
+    </div>
+
+    <div class="dropdown for-message">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="message" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-envelope"></i>
+            <span class="count bg-primary">@ViewBag.unreadMessageCount</span>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="message">
+            <p class="red">@ViewBag.unreadMessageCount Okunmamış mesajınız var.</p>
+
+            @foreach (var item in Model)
+            {
+            <a class="dropdown-item media" href="/AdminMessage/MessageList/">
+                <span class="photo media-left"><img alt="avatar" src="/Images/ProjectImage/AdminImage/user.png"></span>
+                <div class="message media-body">
+                    <span class="name float-left">@item.NameSurname</span>
+                    <span class="time float-right">@item.SendDate.ToString("dd MMMM yyyy", new System.Globalization.CultureInfo("tr-TR"))</span>
+                    <p>@item.Subject</p>
+                </div>
+            </a>
+            }
+
+        </div>
+    </div>
+</div>
+
+<div class="user-area dropdown float-right">
+    <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img class="user-avatar rounded-circle" src="~/Images/ProjectImage/AdminImage/user.png" alt="User Avatar">
+    </a>
+
+    <div class="user-menu dropdown-menu">
+
+        <a class="nav-link" href="/AdminMessage/MessageList/"><i class="fa fa-bell-o"></i>Mesajlar <span class="count">@ViewBag.unreadMessageCount</span></a>
+
+        <a class="nav-link" href="@Url.Action("Logout", "Login")"><i class="fa fa-power-off"></i>Çıkış Yap</a>
+
+    </div>
+</div>

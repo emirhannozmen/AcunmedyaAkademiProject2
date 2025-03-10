@@ -1,0 +1,41 @@
+﻿@model AcunmedyaAkademiProject2.Entities.Slider
+
+@{
+    ViewBag.Title = "CreateSlider";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="animated fadeIn">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Slider Ekleme Sayfası</strong>
+                    </div>
+                    <div class="card-body">
+
+                        <form method="post">
+
+                            <label>Başlık</label>
+                            <input type="text" name="Title" class="form-control" />
+                            <br />
+
+                            <label>Açıklama</label>
+                            <input type="text" name="Description" class="form-control" />
+                            <br />
+
+                            <label>Resim</label>
+                            <input type="tel" name="ImageUrl" class="form-control" />
+                            <br />
+
+                            <button class="btn btn-primary">Ekle</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

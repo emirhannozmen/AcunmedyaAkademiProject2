@@ -1,0 +1,42 @@
+﻿@model AcunmedyaAkademiProject2.Entities.Testimonial
+
+@{
+    ViewBag.Title = "CreateTestimonial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="content">
+    <div class="animated fadeIn">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Referans Ekleme Sayfası</strong>
+                    </div>
+                    <div class="card-body">
+
+                        <form method="post">
+
+                            <label>Referans Ad Soyad</label>
+                            <input type="text" name="NameSurname" class="form-control" />
+                            <br />
+
+                            <label>Yorumu</label>
+                            <input type="text" name="CommentDetail" class="form-control" />
+                            <br />
+
+                            <label>Resim</label>
+                            <input type="tel" name="ImageUrl" class="form-control" />
+                            <br />
+
+                            <button class="btn btn-primary">Ekle</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

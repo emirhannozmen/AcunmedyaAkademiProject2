@@ -1,0 +1,53 @@
+﻿@model List<AcunmedyaAkademiProject2.Entities.Testimonial>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/UILayout/_UILayout.cshtml";
+}
+
+<div class="testimonial_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="testimonial_taital">Referanslar</h1>
+            </div>
+        </div>
+        <div class="testimonial_section_2">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="testimonial_box">
+                        <div id="main_slider" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+
+                                @foreach (var (item, index) in Model.Select((value, i) => (value, i)))
+                                {
+                                    var isActive = index == 0 ? "active" : "";
+                                    <div class="carousel-item @isActive">
+                                        <p class="testimonial_text">@item.CommentDetail</p>
+                                        <h4 class="client_name">@item.NameSurname</h4>
+                                        <div class="client_img">
+                                            <img src="@item.ImageUrl" style="width: 203px; height: 170px; object-fit: cover;">
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+                            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="copyright_section">
+    <div class="container">
+        <p class="copyright_text">&copy; @DateTime.Now.Year Acunmedya Sweet. Tüm Hakları Saklıdır.</p>
+    </div>
+</div>

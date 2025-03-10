@@ -1,0 +1,37 @@
+
+@{
+    Layout = null;
+}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<!DOCTYPE html>
+<html>
+@Html.Partial("PartialHead")
+
+<body>
+    <div class="header_section">
+
+        @Html.Action("PartialNavbar", "Default")
+
+        @Html.Action("PartialSlider", "Default")
+
+    </div>
+
+    @Html.Action("PartialAbout", "Default")
+
+    @Html.Action("PartialLast6Product", "Default")
+
+    @Html.Action("PartialServices", "Default")
+
+    @Html.Action("PartialTestimonial", "Default")
+
+    @Html.Action("PartialContact", "Default")
+
+    @Html.Action("PartialInfo", "Default")
+
+    @Html.Partial("PartialScript")
+
+</body>
+</html>

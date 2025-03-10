@@ -1,0 +1,22 @@
+﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<aside id="left-panel" class="left-panel">
+    <nav class="navbar navbar-expand-sm navbar-default">
+        <div id="main-menu" class="main-menu collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/AdminDashboard/Index/"><i class="menu-icon fa fa-tachometer-alt"></i> Dashboard </a></li>
+                <li><a href="/Default/Index/"><i class="menu-icon fa fa-globe"></i> Siteye Git </a></li>
+                <li><a href="/AdminCategory/CategoryList/"><i class="menu-icon fa fa-tags"></i> Kategoriler </a></li>
+                <li><a href="/AdminProduct/ProductList/"><i class="menu-icon fa fa-box-open"></i> Ürünler </a></li>
+                <li><a href="/AdminSlider/SliderList/"><i class="menu-icon fa fa-images"></i> Slider Alanı </a></li>
+                <li><a href="/AdminAbout/AboutList/"><i class="menu-icon fa fa-address-card"></i> Hakkımızda </a></li>
+                <li><a href="/AdminService/ServiceList/"><i class="menu-icon fa fa-concierge-bell"></i> Hizmetlerimiz </a></li>
+                <li><a href="/AdminTestimonial/TestimonialList/"><i class="menu-icon fa fa-user-check"></i> Referanslar </a></li>
+                <li><a href="/AdminMessage/MessageList/"><i class="menu-icon fa fa-envelope"></i> Gelen Kutusu </a></li>
+                <li><a href="/AdminStatistic/StatisticList/"><i class="menu-icon fa fa-chart-line"></i> İstatistikler </a></li>
+                <li><a href="/AdminContact/ContactList/"><i class="menu-icon fa fa-id-card"></i> İletişim </a></li>
+                @*<li><a href="#"><i class="menu-icon fa fa-cog"></i> Ayarlar </a></li>*@
+                <li><a href="@Url.Action("Logout", "Login")"><i class="menu-icon fa fa-sign-out-alt"></i> Çıkış Yap </a></li>
+            </ul>
+        </div>
+    </nav>
+</aside>

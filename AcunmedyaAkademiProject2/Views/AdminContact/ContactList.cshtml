@@ -1,0 +1,49 @@
+﻿@model List<AcunmedyaAkademiProject2.Entities.Info>
+
+@{
+    ViewBag.Title = "ContactList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="animated fadeIn">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">İletişim</strong>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-light table-striped table-hover shadow-sm rounded">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">E-posta</th>
+                                    <th scope="col">Konum</th>
+                                    <th scope="col">Telefon</th>
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th scope="row">@item.InfoId</th>
+                                        <td>@item.Email</td>
+                                        <td>@item.Location</td>
+                                        <td>@item.Phone</td>
+                                        <td><a href="/AdminContact/UpdateContact/@item.InfoId" class="btn btn-success btn-sm">Güncelle</a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>  

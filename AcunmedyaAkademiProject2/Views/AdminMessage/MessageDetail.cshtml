@@ -1,0 +1,31 @@
+﻿@model AcunmedyaAkademiProject2.Entities.Message
+
+@{
+    ViewBag.Title = "Message Detail";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Mesaj Detayı</strong>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Gönderen:</strong> @Model.NameSurname</p>
+                        <p><strong>E-posta:</strong> @Model.Email</p>
+                        <p><strong>Konu:</strong> @Model.Subject</p>
+                        <p><strong>Tarih:</strong> @Model.SendDate.ToString("d-MM-yyyy")</p>
+                        <p><strong>Mesaj İçeriği:</strong></p>
+                        <div class="border p-3 bg-light">
+                            @Model.MessageDetail
+                        </div>
+                        <a href="/AdminMessage/MessageList" class="btn btn-secondary mt-3">Geri Dön</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
